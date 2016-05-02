@@ -19,7 +19,7 @@ class WrapperTGraph : public IFunctionWrapper
         };
         virtual ~WrapperTGraph();
 
-        double value(size_t size, const double* xs) override
+        double value(size_t size, const double* xs)
         {
             double input = xs[0];
             // Avoid out-of-range extrapolation
@@ -27,7 +27,7 @@ class WrapperTGraph : public IFunctionWrapper
             else if(input<m_min) input = m_min;
             return (size>0 ? m_graph.Eval(xs[0]) : 0.);
         }
-        double value(const std::vector<double>& xs) override
+        double value(const std::vector<double>& xs)
         {
             return value(xs.size(), xs.data());
         }

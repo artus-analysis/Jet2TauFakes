@@ -14,11 +14,11 @@ class WrapperTFormula : public IFunctionWrapper
         WrapperTFormula(const TFormula& f, const std::string& name):IFunctionWrapper(name),m_formula(f) {};
         virtual ~WrapperTFormula();
 
-        double value(size_t size, const double* xs) override
+        double value(size_t size, const double* xs)
         {
             return m_formula.EvalPar(xs);
         }
-        double value(const std::vector<double>& xs) override
+        double value(const std::vector<double>& xs)
         {
             return value(xs.size(), xs.data());
         }

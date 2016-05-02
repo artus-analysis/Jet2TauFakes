@@ -14,7 +14,7 @@ class WrapperTH1D : public IFunctionWrapper
         WrapperTH1D(const TH1D& h, const std::string& name):IFunctionWrapper(name),m_histo(h) {};
         virtual ~WrapperTH1D();
 
-        double value(size_t size, const double* xs) override
+        double value(size_t size, const double* xs)
         {
             if(size<1) return 0.;
             int bx = m_histo.GetXaxis()->FindBin(xs[0]);
@@ -23,7 +23,7 @@ class WrapperTH1D : public IFunctionWrapper
             else if(bx==0) bx = 1;
             return m_histo.GetBinContent(bx);
         }
-        double value(const std::vector<double>& xs) override
+        double value(const std::vector<double>& xs)
         {
             return value(xs.size(), xs.data());
         }

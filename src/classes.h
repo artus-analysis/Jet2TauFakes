@@ -24,8 +24,8 @@ namespace
         WrapperTH2F wth2f;
         WrapperTH2D wth2d;
 
-        std::map<std::string, std::vector<size_t>> m1;
-        std::map<std::string, std::vector<std::vector<size_t>>> m2;
+        std::map<std::string, std::vector<size_t> > m1;
+        std::map<std::string, std::vector<std::vector<size_t> > > m2;
 
         FakeFactor ff;
     };

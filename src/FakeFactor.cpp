@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-ClassImp(FakeFactor)
+// ClassImp(FakeFactor)
 
 /*****************************************************************/
 FakeFactor::~FakeFactor()
@@ -47,7 +47,7 @@ double FakeFactor::value(const std::vector<double>& xs,
 
 
 /*****************************************************************/
-bool FakeFactor::addNode(WrapperPtr fct,
+bool FakeFactor::addNode(IFunctionWrapper* fct,
         const std::vector<size_t>& sons,
         const std::vector<size_t>& vars,
         const std::string& sys)

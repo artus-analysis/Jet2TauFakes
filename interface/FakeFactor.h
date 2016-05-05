@@ -10,10 +10,10 @@
 #include <map>
 #include <iostream>
 
-// #include "TObject.h"
+#include "TObject.h"
 
 
-class FakeFactor
+class FakeFactor : public TObject
 {
     private:
         // some aliases
@@ -120,8 +120,9 @@ class FakeFactor
         std::map<std::string, std::vector<std::vector<size_t> > > m_nodeInputs;
 
 
-//     private:
-//         ClassDef(FakeFactor,1)
+    private:
+        ClassDef(FakeFactor,1)
+
 };
 
 
